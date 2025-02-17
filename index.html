@@ -2,69 +2,174 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Zoho Tabs</title>
+  <title>Company Profile</title>
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- Tabler CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css">
   <style>
-    .tab-pane {
-      display: none;
+      /* --- Basic Dark Theme Styles --- */
+    html, body {
+      font-family: sans-serif;
+        height: 100%;
+        margin: 0;
+        background-color: #000000; /* Set a default background */
+
     }
-    .tab-pane.show.active {
-      display: block !important;
+      .card, .page-header
+      {
+          background-color: #121212 !important;
+      }
+    .page-wrapper{
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        border-color: #222222 !important;
+    }
+    .card {
+      border: 1px solid #222222;
+      margin-bottom: 1rem;
+        color: #ffffff;
+    }
+    .card-title {
+      font-weight: bold;
+    }
+    /* Tab Styles */
+    .nav-tabs .nav-link.active {
+        background-color: #121212 !important;
+        border-color: #222222 !important;
+        color: #fff !important;
+    }
+    .nav-tabs .nav-link {
+        color: #ffffff !important;
+    }
+    .tab-pane{
+        color: #ffffff;
+    }
+    a {
+        color: #17a2b8; /* Example link color - adjust as needed */
     }
   </style>
 </head>
 <body>
+<div class="page-wrapper">
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Company Profile</h1>
+        </div>
 
-<div class="container mt-5">
-  <h1>Zoho Tabs (Hosted Externally)</h1>
-
-  <ul class="nav nav-tabs" id="basicTabs" role="tablist">
-    <li class="nav-item">
-      <button class="nav-link active" data-tab="home">Home</button>
-    </li>
-    <li class="nav-item">
-      <button class="nav-link" data-tab="profile">Profile</button>
-    </li>
-    <li class="nav-item">
-      <button class="nav-link" data-tab="contact">Contact</button>
-    </li>
-  </ul>
-
-  <div class="tab-content mt-3">
-    <div class="tab-pane fade show active" id="home">
-      <p>This is the Home tab content.</p>
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" id="myTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="basic-tab" data-bs-toggle="tab" data-bs-target="#basic" type="button" role="tab" aria-controls="basic" aria-selected="true">Basic Info</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false">About</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="credentials-tab" data-bs-toggle="tab" data-bs-target="#credentials" type="button" role="tab" aria-controls="credentials" aria-selected="false">Credentials</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="faqs-tab" data-bs-toggle="tab" data-bs-target="#faqs" type="button" role="tab" aria-controls="faqs" aria-selected="false">FAQs</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="features-tab" data-bs-toggle="tab" data-bs-target="#features" type="button" role="tab" aria-controls="features" aria-selected="false">Features</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labelledby="basic-tab">
+                        <p><strong>Phone:</strong> <span id="phone"></span></p>
+                        <p><strong>Email:</strong> <span id="email"></span></p>
+                        <p><strong>Website:</strong> <a href="#" id="website" target="_blank" rel="noopener noreferrer"></a></p>
+                        <p><strong>Address</strong></p>
+                        <p id="address"></p>
+                    </div>
+                    <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+                        <p><strong>Services Provided:</strong></p> <p id="services"></p>
+                        <p><strong>Company History:</strong></p> <p id="history"></p>
+                        <p><strong>Team</strong></p>
+                        <p id="team"></p>
+                    </div>
+                    <div class="tab-pane fade" id="credentials" role="tabpanel" aria-labelledby="credentials-tab">
+                        <p><strong>Certifications:</strong></p> <p id="certs"></p>
+                        <p><strong>Partnerships and Affiliations:</strong></p> <p id="partnerships"></p>
+                    </div>
+                    <div class="tab-pane fade" id="faqs" role="tabpanel" aria-labelledby="faqs-tab">
+                        <p><strong>Frequently Asked Questions</strong></p>
+                        <p id="faqs"></p>
+                    </div>
+                    <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
+                        <p><strong>Features:</strong></p> <p id="features"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="tab-pane fade" id="profile">
-      <p>This is the Profile tab content.</p>
-    </div>
-    <div class="tab-pane fade" id="contact">
-      <p>This is the Contact tab content.</p>
-    </div>
-  </div>
 </div>
 
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Tab system loaded successfully!");
+  document.addEventListener('DOMContentLoaded', function() {
+    // Function to get URL parameters
+    function getParameterByName(name, url = window.location.href) {
+      name = name.replace(/[\[\]]/g, '\\$&');
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
 
-    document.querySelectorAll("[data-tab]").forEach(tab => {
-        tab.addEventListener("click", function () {
-            let target = this.getAttribute("data-tab");
+    // Get data from URL parameters
+    const phone = getParameterByName('phone');
+    const email = getParameterByName('email');
+    const website = getParameterByName('website');
+    const address = getParameterByName('address');
+    const services = getParameterByName('services');
+    const history = getParameterByName('history');
+    const team = getParameterByName('team');
+    const certs = getParameterByName('certs');
+    const partnerships = getParameterByName('partnerships');
+    const faqs = getParameterByName('faqs');
+    const features = getParameterByName('features');
+    const noData = getParameterByName('nodata');
 
-            console.log("Switching tab to:", target);
-
-            document.querySelectorAll(".tab-pane").forEach(pane => {
-                pane.classList.remove("show", "active");
-            });
-
-            document.getElementById(target).classList.add("show", "active");
-
-            document.querySelectorAll("[data-tab]").forEach(t => t.classList.remove("active"));
-            this.classList.add("active");
-        });
-    });
-});
+    // Update the HTML content
+    if (noData) {
+        //Display no data message
+        document.querySelector('.card-body').innerHTML = `
+          <h3 class="card-title">No Information Found</h3>
+          <p>There is no information currently in your form submission.</p>
+        `;
+    } else {
+        // Update the HTML content with the fetched values, checking for null/undefined
+        document.getElementById('phone').textContent = phone || 'Not Available';
+        document.getElementById('email').textContent = email || 'Not Available';
+        const websiteLink = document.getElementById('website');
+        const websiteValue = website || ''; // Ensure website is never null
+            if (websiteValue !== 'Not Available' && websiteValue !== "") {
+                websiteLink.href = websiteValue;
+                websiteLink.textContent = websiteValue;
+            } else {
+                websiteLink.href = "#"; // Set to "#" or remove the href if no website
+                websiteLink.textContent = 'Not Available';
+                websiteLink.removeAttribute('target'); // Remove target if no website
+                websiteLink.removeAttribute('rel');
+            }
+        document.getElementById('address').textContent = address || 'Not Available';
+        document.getElementById('services').textContent = services || 'Not Available';
+        document.getElementById('history').textContent = history || 'Not Available';
+        document.getElementById('team').textContent = team || 'Not Available';
+        document.getElementById('certs').textContent = certs || 'Not Available';
+        document.getElementById('partnerships').textContent = partnerships || 'Not Available';
+        document.getElementById('faqs').textContent = faqs || 'Not Available';
+        document.getElementById('features').textContent = features || 'Not Available';
+    }
+  });
 </script>
-
 </body>
 </html>
