@@ -7,84 +7,107 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <!-- Tabler CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css">
-      <style>
-    /* --- Apply a subtle font size increase without breaking layout --- */
+       <style>
+    /* --- Apply a clean and uniform design --- */
     html, body {
-      font-family: sans-serif; /* Web-safe fallback */
-      font-size: 17px; /* Slight increase for readability */
+      font-family: sans-serif;
+      font-size: 17px; /* Balanced readability */
       height: 100%;
       margin: 0;
-      background-color: #000 !important; /* Black background */
+      background-color: #000 !important; /* Ensure full black background */
       color: #fff;
       padding: 0 !important;
     }
 
-    /* --- Maintain dark theme across elements --- */
+    /* --- Remove unwanted glow/borders --- */
     .page-wrapper,
     .page-wrapper * {
         background-color: #000000 !important;
         color: #ffffff !important;
         border-color: #222222 !important;
+        box-shadow: none !important; /* Removes the glow effect */
+        outline: none !important;
     }
 
-    /* --- Headings: Adjusted for better visual hierarchy --- */
-    h1, .page-title {
-      font-size: 26px !important;
-      font-weight: bold;
+    /* --- Refine the card styling for a cleaner look --- */
+    .card {
+        background-color: #121212 !important;
+        border: 1px solid #222 !important; /* Darker borders */
+        box-shadow: none !important; /* Removes unwanted glow */
+        padding: 15px;
+        border-radius: 6px; /* Slightly softer edges */
     }
 
-    h2 {
-      font-size: 22px !important;
-    }
-
-    h3 {
-      font-size: 20px !important;
-    }
-
-    /* --- Body text and paragraphs: Subtle increase for readability --- */
-    p, li, label {
-      font-size: 17px !important;
-      line-height: 1.5;
-    }
-
-    /* --- Tabs & Buttons: Keep UI consistency while increasing readability --- */
+    /* --- Fix tab buttons (remove glow and adjust spacing) --- */
     .nav-tabs .nav-link {
         font-size: 17px !important;
-        padding: 10px 12px;
+        padding: 10px 14px;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        transition: background 0.2s ease-in-out;
     }
 
+    /* --- Ensure active tabs stand out properly --- */
+    .nav-tabs .nav-link.active {
+        background-color: #121212 !important;
+        border-color: #333 !important;
+    }
+
+    /* --- Fix button styling and remove glow --- */
     .btn {
         font-size: 16px !important;
         padding: 8px 12px;
+        background: none !important;
+        border: 1px solid #444 !important;
+        box-shadow: none !important;
     }
 
-    /* --- Inputs and form fields: Maintain balance without excess spacing --- */
+    /* --- Headings: Ensure clean spacing and alignment --- */
+    h1, .page-title {
+        font-size: 26px !important;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 22px !important;
+    }
+
+    h3 {
+        font-size: 20px !important;
+    }
+
+    /* --- Ensure text readability and spacing --- */
+    p, li, label {
+        font-size: 17px !important;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    /* --- Input fields: Adjust text size and spacing --- */
     input, textarea, select {
         font-size: 16px !important;
         padding: 8px;
+        background-color: #1a1a1a !important;
+        color: #fff !important;
+        border: 1px solid #333 !important;
     }
 
-    /* --- Card titles: Slight increase while maintaining clean structure --- */
+    /* --- Card titles: Ensure clear text display --- */
     .card-title {
         font-size: 19px !important;
         font-weight: bold;
+        margin-bottom: 10px;
     }
 
-    /* --- Ensure responsive sizing for different screen widths --- */
-    @media (max-width: 768px) {
-        html, body {
-            font-size: 16px; /* Slightly smaller for smaller screens */
-        }
+    /* --- Fix layout misalignments --- */
+    .container {
+        padding: 20px !important;
+    }
 
-        .nav-tabs .nav-link {
-            font-size: 16px !important;
-            padding: 8px 10px;
-        }
-
-        .btn {
-            font-size: 15px !important;
-            padding: 8px 10px;
-        }
+    .row {
+        margin: 0 !important;
     }
   </style>
 
