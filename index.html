@@ -8,50 +8,60 @@
   <!-- Tabler CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css">
   <style>
-      /* --- Basic Dark Theme Styles --- */
     html, body {
-      font-family: sans-serif;
-        height: 100%;
-        margin: 0;
-        background-color: #000000; /* Set a default background */
+      font-family: sans-serif; /* Use a web-safe font */
+      height: 100%; /* Ensure full height */
+      margin: 0;
+      background-color: #000; /* Set a default dark background */
+      color: #fff; /* Set default text color */
+    }
 
+    .page-wrapper {
+      background-color: #000 !important; /* Force dark background */
+      color: #fff !important; /* Force white text */
     }
-      .card, .page-header
-      {
-          background-color: #121212 !important;
-      }
-    .page-wrapper{
-        background-color: #000000 !important;
-        color: #ffffff !important;
-        border-color: #222222 !important;
+
+    .card, .page-header {
+        background-color: #121212 !important; /* Darker card background */
+        border-color: #222222 !important; /* Darker border */
     }
+
     .card {
-      border: 1px solid #222222;
+      border: 1px solid #222222; /* Consistent border */
       margin-bottom: 1rem;
-        color: #ffffff;
     }
+
     .card-title {
       font-weight: bold;
     }
-    /* Tab Styles */
+
     .nav-tabs .nav-link.active {
-        background-color: #121212 !important;
+        background-color: #121212 !important; /* Dark active tab */
         border-color: #222222 !important;
         color: #fff !important;
     }
+
     .nav-tabs .nav-link {
-        color: #ffffff !important;
+        color: #fff !important; /* White tab text */
     }
-    .tab-pane{
-        color: #ffffff;
+
+    .tab-pane {
+        color: #fff; /* Ensure text inside tabs is white */
     }
+
     a {
-        color: #17a2b8; /* Example link color - adjust as needed */
+        color: #17a2b8; /* Tabler's info color for links */
+    }
+    a:hover { /*  hover color for links */
+        color: #138496;
+    }
+    .container{
+        max-width: 100%;
     }
   </style>
 </head>
 <body>
-<div class="page-wrapper">
+<div class="page-wrapper"> <!-- Add the page-wrapper class -->
     <div class="container">
         <div class="page-header">
             <h1 class="page-title">Company Profile</h1>
