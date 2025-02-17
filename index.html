@@ -13,7 +13,7 @@
       font-family: sans-serif; /* Use a web-safe fallback */
       height: 100%;
       margin: 0;
-      background-color: #000; /* Set default background */
+      background-color: #000 !important; /* Black background */
       color: #fff;
     }
 
@@ -34,6 +34,7 @@
       /*Force the background of the header to be fully black*/
       .page-header {
         background-color: #000000 !important;
+        display: none; /* Hide the page header */
     }
 
      /* --- Button Colors --- */
@@ -107,19 +108,17 @@
     .nav-tabs .nav-link {
         color: #fff !important;
     }
-     /* --- Page Header Style - Remove Lines --- */
-    .page-header {
-        padding: 20px 0;
-        margin-bottom: 2rem;
-    }
   </style>
 </head>
 <body>
 <div class="page-wrapper"> <!-- Use the page-wrapper class -->
     <div class="container">
+        <!-- REMOVE THIS ENTIRE page-header DIV -->
+        <!--
         <div class="page-header">
             <h1 class="page-title">Company Profile</h1>
         </div>
+        -->
 
         <div class="card">
             <div class="card-header">
